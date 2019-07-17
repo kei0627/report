@@ -18,7 +18,6 @@ server.get('/', function( req, res ) {
         }
         res.render( 'sql.ejs', { content: rows });
     });
-    console.log(connection.query);
 });
 
 server.listen( 80, function() {
