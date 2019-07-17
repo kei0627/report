@@ -10,13 +10,15 @@ var connection = mysql.createConnection({
     password: 'websystem',
     database: 'web'
 });
-
-server.get('/title', function( req, res ) {
-    connection.query('select id, year, team_id from final inner join team on final.team_id = team.name;', (error, rows, fields) => {
+//select id, year, team_id from final inner join team on final.team_id = team.name
+server.get('/player', function( req, res ) {
+    let query =　"select * from final;";
+    console.log( query );
+    connection.query( query, (error, rows, fields) => {
         if( error ) {
             console.log('Query Error');
         }
-        res.render( 'sql.ejs', { content: rows });
+        res.render( 'player.ejs', { content: rows });
     });
 });
 
