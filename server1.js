@@ -18,7 +18,7 @@ server.get('/player', function( req, res ) {
         if( error ) {
             console.log('Query Error');
         }
-        res.render( 'player.ejs', { content: rows });
+        res.render( 'sql.ejs', { content: rows });
     });
 });
 
