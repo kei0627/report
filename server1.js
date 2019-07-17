@@ -11,7 +11,7 @@ var connection = mysql.createConnection({
     database: 'web'
 });
 //select id, year, team_id from final inner join team on final.team_id = team.name
-server.get('/player', function( req, res ) {
+server.get('/', function( req, res ) {
     let query =　"select * from final;";
     console.log( query );
     connection.query( query, (error, rows, fields) => {
