@@ -12,9 +12,9 @@ var connection = mysql.createConnection({
 });
 
 server.get('/', function( req, res ) {
-    let sorting = req.query.sorting || '人口';
+    let sorting = req.query.sorting || King;
     let number = req.query.number || 10;
-    let query = 'select id, 都道府県, ' + sorting + ' from example order by ' + sorting + ' desc limit ' + number + ';';
+    let query = 'select year,team_id,player_id,' examlplerder by ' + sorting + ' desc limit ' + number + ';';
     console.log( query );
     connection.query( query, (error, rows, fields) => {
         if( error ) {
