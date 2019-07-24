@@ -12,9 +12,7 @@ var connection = mysql.createConnection({
 });
 //select id, year, team_id from final inner join team on final.team_id = team.name
 server.get('/', function( req, res ) {
-    let query =　"select * from final;";
-    console.log( query );
-    connection.query( query, (error, rows, fields) => {
+    connection.query('select id, year, team_id from final ;', (error, rows, fields) => {
         if( error ) {
             console.log('Query Error');
         }
