@@ -14,8 +14,10 @@ var connection = mysql.createConnection({
 server.get('/', function( req, res ) {
     connection.query('select id, year, team_id from final ;', (error, rows, fields) => {
         if( error ) {
+            console.log( error );
             console.log('Query Error');
         }
+        console.log( rows );
         res.render( 'sql.ejs', { content: rows });
     });
 });
