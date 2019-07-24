@@ -12,7 +12,7 @@ var connection = mysql.createConnection({
 });
 
 server.get('/', function( req, res ) {
-    let sorting = req.query.sorting || King;
+    let sorting = req.query.sorting || 'King';
     let number = req.query.number || 10;
     let query = 'select year,team_id,player_id,' + sorting + ' from final  order by ' + sorting + ' desc limit ' + number + ';';
     console.log( query );
