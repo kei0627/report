@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang=ja>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+    <table>
+        <% for( let result of content ) { %>
+        <tr>
+            <td>年代：<%= result.year %></td>
+            <td>所属クラブ：<%= result.team_name %></td>
+            <td><%= result.win %>VS</td>
+            <td><%= result.lose %></td>
+            <td>所属クラブ：<%= result.team2_name %></td>
+            <td>選手名：<%= result.player_name %></td>
+            <td><%= result.King %></td>
+        </tr>
+        <% } %>
+    </table>
+    <form action="/" method="get">
+        並び順：<select name="sorting">
+            <option value=King>得点王のスコア</option>
+            <option value=win>勝ちのスコア</option>
+            <option value=lose>負けスコア</option>
+        </select>
+        表示数：<input type="text" name="number" size="10">
+        <input type="submit" value="並び替える">
+    </form>
+</body>
+</html>
